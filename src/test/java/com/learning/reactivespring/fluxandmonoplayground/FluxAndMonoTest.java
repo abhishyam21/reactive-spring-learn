@@ -77,4 +77,19 @@ public class FluxAndMonoTest {
                 .expectError(RuntimeException.class)
                 .verify();
     }
+
+    @Test
+    public void testFluxElementsSequenceWithCount(){
+        Flux<String> stringFlux = Flux
+                .just("Spring", "Spring Boot", "Reactive Spring")
+                .concatWith(
+                        Flux.error(new RuntimeException("Exception Created by me"))
+                )
+                .log();
+        StepVerifier
+                .create(stringFlux)
+                .expectNextCount(3)
+                .expectError(RuntimeException.class)
+                .verify();
+    }
 }
