@@ -8,7 +8,7 @@ import reactor.test.StepVerifier;
  * @author Abhishyam.c on 01/08/20
  */
 
-public class FluxAndMonoTest {
+public class FluxTest {
 
     @Test
     public void testFlux(){
