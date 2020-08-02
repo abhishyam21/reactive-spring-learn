@@ -36,4 +36,15 @@ public class FluxFactoryTest {
                 .expectNext("chiru", "nag", "venky", "balayya")
                 .verifyComplete();
     }
+
+    /**
+     * Create a flux from stream
+     */
+    @Test
+    public void fluxUsingStream(){
+        Flux<String> namesFlux = Flux.fromStream(names.stream());
+        StepVerifier.create(namesFlux)
+                .expectNext("chiru", "nag", "venky", "balayya")
+                .verifyComplete();
+    }
 }
