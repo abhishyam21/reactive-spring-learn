@@ -25,6 +25,9 @@ public class FluxFactoryTest {
                 .verifyComplete();
     }
 
+    /**
+     * Create a flux from array
+     */
     @Test
     public void fluxUsingArray(){
         String[] names = new String[]{"chiru", "nag", "venky", "balayya"};
