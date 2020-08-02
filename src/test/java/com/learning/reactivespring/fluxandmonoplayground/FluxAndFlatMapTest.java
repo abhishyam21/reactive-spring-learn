@@ -64,6 +64,9 @@ public class FluxAndFlatMapTest {
 
     }
 
+    /**
+     * Here we are maintain the order of the elements which we gonna publish
+     */
     @Test
     public void transformUsingFlatMapParallelAndOrder(){
         Flux<Flux<String>> namesFlux = Flux
